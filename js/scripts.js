@@ -2,7 +2,7 @@
 function Contact(first, last) {
   this.firstName = first;
   this.lastName = last;
-  this.address = [];
+  this.addresses = [];
 }
 
 function Address(street, city, state) {
@@ -31,7 +31,7 @@ function resetFields() {
 $(document).ready(function() {
 
   $("#add-address").click(function() {
-    $("#new-addesses").append('<div class="new-address">' +
+    $("#new-addresses").append('<div class="new-address">' +
                                 '<div class="form-group">' +
                                   '<label for="new-street">Street</label>' +
                                   '<input type="text" class="form-control new-street">' +
@@ -72,10 +72,10 @@ $(document).ready(function() {
       $("ul#addresses").text("");
       newContact.addresses.forEach(function(address) {
         $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
-        });
       });
+    });
 
-      resetFields();
+    resetFields();
 
     });
   });
